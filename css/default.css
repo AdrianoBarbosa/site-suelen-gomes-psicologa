@@ -13,30 +13,55 @@
   src: url("fonts/Lato-Light.ttf");
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: #eee7e1;
   font-family: "Lato Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
+.container {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  text-align: center;
+  color: white;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-header span {
+.header span {
   margin-top: 5px;
   color: #a4863b;
   font-size: large;
 }
 
 .logo {
-  margin-top: 3vh;
   width: 300px;
 }
 
-.networks {
-  margin-top: 40px;
+.content {
+  flex: 1;
+  justify-content: start;
+}
+
+.socials {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,5 +82,13 @@ header span {
   align-items: center;
 
   text-decoration: none;
-  color: #a4863b;
+  color: #000066;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000066;
+  flex-direction: column;
 }
