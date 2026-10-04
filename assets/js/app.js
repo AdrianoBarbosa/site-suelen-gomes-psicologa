@@ -141,9 +141,11 @@ function Hero() {
           <${Reveal} delay=${260}><p class="hero-meta"><span>${CFG.crp}</span><span class="dot-sep" aria-hidden="true"></span><span>${CFG.city}</span></p><//>
         </div>
         <${Reveal} delay=${120} className="hero-visual">
-          <div class="arch">
-            <div class="arch-glow" aria-hidden="true"></div>
-            <${Logo} className="logo-hero" />
+          <div class="emblem">
+            <span class="blob" aria-hidden="true"></span>
+            <div class="emblem-circle">
+              <${Logo} className="logo-hero" />
+            </div>
           </div>
         <//>
       </div>

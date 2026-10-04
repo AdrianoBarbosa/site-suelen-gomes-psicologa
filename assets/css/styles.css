@@ -148,23 +148,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .dot-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
 
 .hero-visual { display: flex; justify-content: center; }
-.arch {
-  position: relative; width: min(100%, 420px); aspect-ratio: 4 / 5;
-  border-radius: 999px 999px 28px 28px;
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface2) 100%);
+.emblem { position: relative; width: min(100%, 440px); aspect-ratio: 1; display: grid; place-items: center; }
+.blob {
+  position: absolute; inset: 0;
+  border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--gold) 22%, transparent), color-mix(in srgb, var(--gold) 6%, transparent));
+  animation: morph 16s ease-in-out infinite alternate;
+}
+@keyframes morph {
+  0% { border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%; transform: rotate(0deg); }
+  50% { border-radius: 45% 55% 42% 58% / 56% 44% 56% 44%; }
+  100% { border-radius: 52% 48% 60% 40% / 42% 54% 46% 58%; transform: rotate(12deg); }
+}
+.emblem-circle {
+  position: relative; width: 84%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, var(--surface) 0%, var(--surface2) 100%);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  display: grid; place-items: center;
 }
-.arch::after {
-  content: ""; position: absolute; inset: 14px; border-radius: 999px 999px 18px 18px;
+.emblem-circle::after {
+  content: ""; position: absolute; inset: 12px; border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent); pointer-events: none;
 }
-.arch-glow {
-  position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; top: 18%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--gold) 22%, transparent), transparent 70%);
-}
-.logo-hero { position: relative; width: 78%; }
+.logo-hero { position: relative; width: 74%; }
 
 /* ---------- seções ---------- */
 
@@ -283,7 +290,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .header { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
   .hero-grid, .about-grid, .reasons-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   .hero-visual { order: -1; }
-  .arch { width: min(100%, 300px); }
+  .emblem { width: min(100%, 320px); }
   .cards, .steps { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
 }
 
@@ -294,7 +301,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .brand .logo { width: 112px; }
   .header-cta { display: none; }
   .hero { padding: 24px 0 72px; }
-  .arch { width: min(100%, 240px); }
+  .emblem { width: min(100%, 260px); }
   .hero-cta .btn { flex: 1 1 100%; }
   .section { padding: 72px 0; }
   .reasons, .contact-grid { grid-template-columns: 1fr; }
